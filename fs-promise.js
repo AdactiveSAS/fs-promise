@@ -131,6 +131,17 @@ module.exports = (() => {
                     resolve(stats);
                 });
             });
+        },
+        readfile: function (path) {
+            return new Promise((resolve, reject) => {
+                fs.readfile(path, (err, data) => {
+                    if (err) {
+                        reject(err);
+                    }
+
+                    resolve(data);
+                });
+            });
         }
     };
 })();
