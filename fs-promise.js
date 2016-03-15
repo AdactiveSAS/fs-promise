@@ -132,9 +132,9 @@ module.exports = (() => {
                 });
             });
         },
-        readfile: function (path) {
+        readFile: function (path) {
             return new Promise((resolve, reject) => {
-                fs.readfile(path, (err, data) => {
+                fs.readFile(path, (err, data) => {
                     if (err) {
                         reject(err);
                     }
