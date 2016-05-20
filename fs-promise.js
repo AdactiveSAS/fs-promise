@@ -2,6 +2,7 @@
 
 module.exports = (() => {
     let fs = require('fs.extra');
+    let mv = require("mv");
 
     return {
         F_OK: fs.F_OK,
@@ -32,7 +33,7 @@ module.exports = (() => {
         },
         rename: function (oldPath, newPath) {
             return new Promise((resolve, reject) => {
-                fs.rename(oldPath, newPath, (err) => {
+                mv(oldPath, newPath, (err) => {
                     if (err) {
                         reject(err);
                     }
