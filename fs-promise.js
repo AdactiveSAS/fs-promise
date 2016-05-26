@@ -33,7 +33,7 @@ module.exports = (() => {
         },
         rename: function (oldPath, newPath) {
             return new Promise((resolve, reject) => {
-                mv(oldPath, newPath, (err) => {
+                mv(oldPath, newPath,{mkdirp:true, clobber:true}, (err) => {
                     if (err) {
                         reject(err);
                     }
