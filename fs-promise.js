@@ -35,7 +35,6 @@ module.exports = (() => {
             return new Promise((resolve, reject) => {
                 mv(oldPath, newPath, (err) => {
                     if (err) {
-                        reject(err);
                         // Retry after 2 seconds (fs references may not been relaesed)
                         setTimeout(() => {
                             mv(oldPath, newPath, (err) => {
